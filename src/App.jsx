@@ -1,13 +1,35 @@
 import "./App.css";
+import UserCard from "./components/UserCard";
+
+const userData = [
+  {
+    name: "jjong",
+    job: "Programmer",
+    imageSrc: "avatar.webp",
+  },
+  {
+    name: "백종성",
+    job: "으얽앍",
+    imageSrc: "avatar2.webp",
+  },
+  {
+    name: "가나다",
+    job: "작가",
+    imageSrc: "avatar3.jpeg",
+  },
+];
 
 const App = () => {
   return (
     <>
-      <div className="card">
-        <img src="./avatar.webp" alt="avatar" />
-        <h2>jongseoung</h2>
-        <h2>Programmer</h2>
-      </div>
+      {userData.map((value, index) => (
+        <UserCard
+          key={index}
+          name={value.name}
+          job={value.job}
+          imageSrc={value.imageSrc}
+        />
+      ))}
     </>
   );
 };
